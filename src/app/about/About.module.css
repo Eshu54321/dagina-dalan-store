@@ -1,0 +1,96 @@
+.aboutWrapper {
+  /* padding-top: 120px; - Removed to unify with global layout */
+}
+
+.header {
+  padding: 0 0 80px 0;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.text h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: var(--black);
+}
+
+.text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.imageBox {
+  position: relative;
+  height: 500px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.values {
+  background: #f9f9f9;
+  padding: 100px 0;
+}
+
+.valueGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .valueGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.valueCard {
+  padding: 40px;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-10px);
+}
+
+.valueCard h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--gold);
+}
+
+.valueCard p {
+  opacity: 0.7;
+  line-height: 1.6;
+}

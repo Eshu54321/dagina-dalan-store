@@ -1,0 +1,133 @@
+.sliderSection {
+  padding: 100px 0;
+  background-color: var(--background);
+  position: relative;
+  z-index: 10;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.sliderControls {
+  display: flex;
+  gap: 15px;
+}
+
+.sliderArrow {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: var(--secondary);
+}
+
+.sliderArrow:hover {
+  background-color: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.sliderWrapper {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.sliderWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 calc(25% - 20px);
+  min-width: 280px;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.imageContainer {
+  position: relative;
+  aspect-ratio: 1/1.1;
+  background-color: #f7f3ed;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: contain;
+  padding: 20px;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.1);
+}
+
+.labelWrapper {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.pillLabel {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--secondary);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.card:hover .pillLabel {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    flex: 0 0 calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 calc(50% - 15px);
+    min-width: 220px;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+  }
+}

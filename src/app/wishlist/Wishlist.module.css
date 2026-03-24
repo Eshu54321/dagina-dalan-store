@@ -1,0 +1,96 @@
+.wishlistWrapper {
+  /* padding-top: 120px; - Removed to unify with global layout */
+  padding-bottom: 80px;
+}
+
+.emptyWishlist {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.wishlistItem {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 15px;
+  transition: all 0.3s ease;
+  border-radius: var(--radius-lg);
+}
+
+.wishlistItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 250px;
+  margin-bottom: 15px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.removeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  color: #888;
+  transition: all 0.3s;
+  z-index: 5;
+}
+
+.removeBtn:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.content {
+  padding: 20px;
+}
+
+.content h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 15px;
+}

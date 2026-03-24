@@ -1,0 +1,130 @@
+.adminLayout {
+  display: flex;
+  background-color: #f5f6fa;
+  min-height: 100vh;
+}
+
+.mainContent {
+  margin-left: 250px;
+  flex: 1;
+  padding: 40px;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: var(--secondary);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.formSection {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  margin-bottom: 30px;
+}
+
+.imageSection {
+  grid-column: span 2;
+}
+
+.formSection h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.inputGroup {
+  margin-bottom: 20px;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.inputGroup input, .inputGroup textarea, .inputGroup select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.uploadBox {
+  border: 2px dashed #e0e0e0;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+  color: #888;
+  cursor: pointer;
+  position: relative;
+}
+
+.uploadBox span {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.uploadBox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.cancelBtn {
+  padding: 12px 30px;
+  background: none;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  border-radius: 4px;
+}

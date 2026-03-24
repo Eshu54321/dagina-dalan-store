@@ -1,0 +1,111 @@
+.pageWrapper {
+  /* padding-top: 180px; - Removed to unify with global layout */
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #f7f3ed;
+  padding: 0 0 80px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumbs {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header h1 {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--secondary);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* TOP FILTER BAR */
+.filterBar {
+  position: sticky;
+  top: var(--navbar-height);
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  margin-bottom: 60px;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.filterGroups {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.filterLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.filterLabel:hover {
+  color: var(--primary);
+}
+
+.sortSelect {
+  padding: 8px 15px;
+  border: none;
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--secondary);
+  cursor: pointer;
+  outline: none;
+}
+
+.itemCount {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* PRODUCT GRID */
+.productMain {
+  padding-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+}

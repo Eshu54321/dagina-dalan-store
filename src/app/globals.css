@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Dazzles Palette */
+  --primary: #C29958; /* Golden Brown */
+  --secondary: #222222; /* Rich Black */
+  --background: #fcf9f9; /* Off-white / Beige */
+  --foreground: #1b1b1c;
+  
+  --gold-light: #d4b47e;
+  --gold-dark: #8c6a30;
+  
+  --accent-cream: #fcf9f9;
+  --muted: #f0eded;
+  --border: #d2c4b4;
+  
+  /* Typography */
+  --font-premium: 'Barlow', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Spectral', serif;
+  --font-display: 'Spectral', serif;
+  
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  --navbar-height: 169px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  font-family: var(--font-premium);
+  background-color: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Premium Typography Utility */
+.text-gold {
+  color: var(--primary);
+}
+
+.bg-black {
+  background-color: var(--secondary);
+  color: #fff;
+}
+
+.btn-premium {
+  padding: 14px 36px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--primary));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--font-premium);
+  box-shadow: 0 4px 15px rgba(194, 153, 88, 0.2);
+}
+
+.btn-premium:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(194, 153, 88, 0.4);
+}
+
+.btn-outline {
+  padding: 14px 36px;
+  background-color: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* Section Title Styling */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 3rem;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--secondary);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.section-title .underline {
+  width: 80px;
+  height: 2px;
+  background-color: var(--primary);
+  margin: 0 auto;
+}
+
+/* Container */
+.container {
+  max-width: 1400px; /* Expansive high-end width */
+  margin: 0 auto;
+  padding: 0 5%; /* Flexible large side margins */
+}
+
+/* Responsive Grid - Mobile First: 2-columns by default for Shop/Categories */
+.grid {
+  display: grid;
+  gap: 15px; /* Tighter gaps for mobile density */
+}
+
+.grid-2, .grid-3, .grid-4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    gap: 20px;
+  }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Storefront Layout Fix */
+.storefront-main {
+  padding-top: var(--navbar-height);
+  min-height: 80vh;
+}
+
+@media (max-width: 768px) {
+  .storefront-main {
+    padding-top: 120px; /* Slimmer header on mobile to pull content up */
+  }
+}

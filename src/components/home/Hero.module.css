@@ -1,0 +1,135 @@
+.hero {
+  position: relative;
+  min-height: 90vh; /* Changed from height to min-height */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background-color: var(--background);
+  padding-top: 0; /* Handled by .storefront-main globally */
+}
+
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bgImage {
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.textContent h1 {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  line-height: 1;
+  margin-bottom: 30px;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.textContent p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  opacity: 0.95;
+  font-weight: 400;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondaryBtn {
+  font-size: 0.95rem;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1.5px solid #fff;
+  padding-bottom: 5px;
+  transition: all 0.3s;
+}
+
+.secondaryBtn:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.arrow {
+  margin-left: 8px;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.btn-premium:hover .arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh; /* Shorter for mobile first fold */
+    background-position: 70% center;
+    text-align: center;
+    justify-content: center;
+    padding: 0 5%;
+  }
+  
+  .overlay {
+    background: rgba(0,0,0,0.4);
+  }
+  
+  .textContent h1 {
+    font-size: 2.4rem; /* More efficient height */
+    margin-bottom: 15px;
+  }
+
+  .textContent p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+  
+  .cta {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .cta button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
