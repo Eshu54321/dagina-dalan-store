@@ -1,9 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import styles from './CategorySlider.module.css';
 
 const categories = [
@@ -17,16 +16,65 @@ const categories = [
 ];
 
 const CategorySlider = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let animationFrameId: number;
+    let lastTime = 0;
+    const speed = 0.5; // pixels per frame
+
+    const scroll = (time: number) => {
+      if (!isPaused) {
+        if (lastTime !== 0) {
+          const delta = time - lastTime;
+          scrollContainer.scrollLeft += speed * (delta / 16.67); // Smooth speed even on high Hz screens
+          
+          // Seamless loop logic: jump from the start of the 2nd set back to the start of the 1st
+          const oneThird = scrollContainer.scrollWidth / 3;
+          if (scrollContainer.scrollLeft >= oneThird * 2) {
+             scrollContainer.scrollLeft = oneThird;
+          } else if (scrollContainer.scrollLeft <= 0) {
+             scrollContainer.scrollLeft = oneThird;
+          }
+        }
+        lastTime = time;
+      } else {
+        lastTime = 0; // Reset time so we don't jump when unpausing
+      }
+      animationFrameId = requestAnimationFrame(scroll);
+    };
+
+    // Initial positioning to the middle set for seamless bidirectional loop
+    const initialPosition = () => {
+       if (scrollContainer.scrollWidth > 0) {
+          scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
+       } else {
+          setTimeout(initialPosition, 100);
+       }
+    };
+    initialPosition();
+
+    animationFrameId = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isPaused]);
+
   return (
     <section className={styles.categorySection}>
-      <div className={`container ${styles.sliderContainer}`}>
-        {categories.map((cat, index) => (
-          <motion.div 
-            key={cat.slug}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
+      <div 
+        ref={scrollRef}
+        className={styles.sliderContainer}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+      >
+        {[...categories, ...categories, ...categories].map((cat, index) => (
+          <div 
+            key={`${cat.slug}-${index}`}
             className={styles.categoryItem}
           >
             <Link href={`/categories/${cat.slug}`}>
@@ -41,7 +89,7 @@ const CategorySlider = () => {
               </div>
               <span className={styles.categoryName}>{cat.name}</span>
             </Link>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

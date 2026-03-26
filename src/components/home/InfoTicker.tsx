@@ -4,11 +4,11 @@ import React from 'react';
 import styles from './InfoTicker.module.css';
 
 const tickerItems = [
-  "7 DAYS EASY RETURN/EXCHANGE",
-  "1 YEARS WARRANTY",
-  "18KT GOLD VERMEIL ON 925 STERLING SILVER",
-  "HALLMARKED JEWELLERY",
-  "FREE SHIPPING ON ORDERS ABOVE 1990",
+  "✔ Premium Finish Jewellery",
+  "✔ Skin-Friendly Material",
+  "✔ Anti-Tarnish Coating",
+  "✔ Lightweight & Comfortable",
+  "✔ Trusted Quality Guarantee",
 ];
 
 const InfoTicker = () => {

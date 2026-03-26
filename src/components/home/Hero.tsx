@@ -1,57 +1,119 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Hero.module.css';
 
+const sliderSlides = [
+  {
+    desktop: '/hero-1-desktop.png',
+    mobile: '/hero-1-mobile.png',
+    title: '9KT Gold Mangalsutras',
+    subTitle: 'Tradition, reimagined with ',
+    author: 'Amrita Rao'
+  },
+  {
+    desktop: '/hero-2-desktop.png',
+    mobile: '/hero-2-mobile.png',
+    title: 'Heritage Bridal Sets',
+    subTitle: 'Royal elegance for your ',
+    author: 'Special Day'
+  },
+  {
+    desktop: '/hero-3-desktop.png',
+    mobile: '/hero-3-mobile.png',
+    title: 'Minimalist Essentials',
+    subTitle: 'Discover luxury for ',
+    author: 'Everyday'
+  }
+];
+
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderSlides.length);
+    }, 6000);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      clearInterval(timer);
+    };
+  }, []);
+
+  const slide = sliderSlides[currentSlide];
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % sliderSlides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + sliderSlides.length) % sliderSlides.length);
+
   return (
     <section className={styles.hero}>
-      <div className={styles.heroBg}>
-        <Image 
-          src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=1920&auto=format&fit=crop" 
-          alt="Premium Dazzles Heritage Jewellery" 
-          fill 
-          priority
-          className={styles.bgImage}
-          sizes="100vw"
-        />
-        <div className={styles.overlay}></div>
-      </div>
-      
-      <div className={`container ${styles.content}`}>
+      <AnimatePresence mode="wait">
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className={styles.textContent}
+          key={currentSlide}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className={styles.splitLayout}
         >
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            Timeless <span className={styles.italic}>Artistry</span>, <br /> Crafted for <span className="text-gold">Heritage</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            Discover our curated collection of fine jewellery, where every piece tells a story of tradition and exquisite craftsmanship.
-          </motion.p>
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.5 }}
-            className={styles.cta}
-          >
-            <Link href="/shop" className="btn-premium">Shop Now <span className={styles.arrow}>→</span></Link>
-            <Link href="/categories/all" className={styles.secondaryBtn}>Explore Collection</Link>
-          </motion.div>
+          {/* Content Side */}
+          <div className={styles.contentCol}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className={styles.textContent}
+            >
+              <h1 className={styles.serif}>{slide.title}</h1>
+              <p className={styles.subText}>
+                {slide.subTitle} <span className={styles.italic}>{slide.author}</span>
+              </p>
+              <Link href="/shop" className={styles.shopNow}>
+                SHOP NOW
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Image Side */}
+          <div className={styles.imageCol}>
+            <Image
+              src={isMobile ? slide.mobile : slide.desktop}
+              alt={slide.title}
+              fill
+              priority
+              className={styles.heroImg}
+              sizes="100vw"
+            />
+          </div>
         </motion.div>
+      </AnimatePresence>
+
+      {/* Navigation Arrows */}
+      <button className={`${styles.navBtn} ${styles.prevBtn}`} onClick={prevSlide} aria-label="Previous">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <button className={`${styles.navBtn} ${styles.nextBtn}`} onClick={nextSlide} aria-label="Next">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+
+      {/* Pagination */}
+      <div className={styles.pagination}>
+        {sliderSlides.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentSlide(idx)}
+            className={`${styles.dot} ${currentSlide === idx ? styles.activeDot : ''}`}
+          />
+        ))}
       </div>
     </section>
   );

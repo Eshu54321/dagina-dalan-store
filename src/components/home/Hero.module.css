@@ -1,135 +1,180 @@
 .hero {
   position: relative;
-  min-height: 90vh; /* Changed from height to min-height */
   width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #d1a799; /* Matches Palmonas Warm Terracotta */
+}
+
+.splitLayout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.contentCol {
+  flex: 1.2;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: #fff;
-  background-color: var(--background);
-  padding-top: 0; /* Handled by .storefront-main globally */
+  padding: 4rem 5% 2rem 8%;
+  z-index: 5;
 }
 
-.heroBg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.bgImage {
-  object-fit: cover;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
-  z-index: 1;
-}
-
-.content {
+.imageCol {
+  flex: 1;
   position: relative;
-  z-index: 2;
-  max-width: 900px;
+  min-height: 100vh;
 }
 
-.textContent h1 {
-  font-size: clamp(3.5rem, 8vw, 6rem);
-  line-height: 1;
-  margin-bottom: 30px;
-  font-family: var(--font-serif);
-  font-weight: 500;
+.heroImg {
+  object-fit: cover;
+  object-position: center;
+}
+
+.textContent {
+  max-width: 580px;
   color: #fff;
-  text-transform: capitalize;
+}
+
+.serif {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.subText {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-bottom: 3rem;
+  opacity: 0.95;
 }
 
 .italic {
   font-style: italic;
+  font-family: var(--font-serif);
 }
 
-.textContent p {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  margin-bottom: 50px;
-  opacity: 0.95;
-  font-weight: 400;
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
+.shopNow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
 }
 
-.cta {
+.shopNow:hover {
+  letter-spacing: 3px;
+  border-bottom-color: #fff;
+}
+
+/* Navigation */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.15);
+  color: #fff;
   display: flex;
-  gap: 20px;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
 }
 
-.secondaryBtn {
-  font-size: 0.95rem;
-  color: #fff;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-bottom: 1.5px solid #fff;
-  padding-bottom: 5px;
-  transition: all 0.3s;
+.navBtn:hover {
+  background: rgba(0, 0, 0, 0.4);
+  scale: 1.05;
 }
 
-.secondaryBtn:hover {
-  color: var(--primary);
-  border-color: var(--primary);
+.prevBtn { left: 24px; }
+.nextBtn { right: 24px; }
+
+/* Pagination */
+.pagination {
+  position: absolute;
+  bottom: 40px;
+  left: 8%;
+  display: flex;
+  gap: 12px;
+  z-index: 20;
 }
 
-.arrow {
-  margin-left: 8px;
-  transition: transform 0.3s;
-  display: inline-block;
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.btn-premium:hover .arrow {
-  transform: translateX(5px);
+.activeDot {
+  background: #fff;
+  width: 28px;
+  border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+  .contentCol { padding-left: 5%; }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    min-height: 80vh; /* Shorter for mobile first fold */
-    background-position: 70% center;
-    text-align: center;
-    justify-content: center;
-    padding: 0 5%;
-  }
-  
-  .overlay {
-    background: rgba(0,0,0,0.4);
-  }
-  
-  .textContent h1 {
-    font-size: 2.4rem; /* More efficient height */
-    margin-bottom: 15px;
-  }
-
-  .textContent p {
-    font-size: 1rem;
-    margin-bottom: 30px;
-    padding: 0 10px;
-  }
-  
-  .cta {
+  .splitLayout {
     flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    margin: 0 auto;
   }
 
-  .cta button {
+  .contentCol {
+    flex: none;
+    min-height: 40vh;
+    padding: 100px 30px 40px;
+    text-align: center;
+  }
+
+  .imageCol {
+    flex: 1;
+    min-height: 60vh;
     width: 100%;
-    max-width: 280px;
+  }
+
+  .textContent {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .serif {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .subText {
+    margin-bottom: 2rem;
+  }
+
+  .pagination {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+  }
+
+  .navBtn {
+    width: 36px;
+    height: 36px;
   }
 }
