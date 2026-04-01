@@ -3,25 +3,27 @@
 }
 
 .header {
-  padding: 0 0 80px 0;
+  padding: 80px 5% 120px 5%;
   text-align: center;
 }
 
 .header h1 {
-  font-size: 3rem;
+  font-size: 4.5rem;
+  font-family: var(--font-serif);
   text-transform: uppercase;
-  letter-spacing: 5px;
-  margin-bottom: 20px;
+  letter-spacing: 12px;
+  margin-bottom: 30px;
+  color: var(--secondary);
 }
 
 .section {
-  padding: 40px 0;
+  padding: 100px 5%;
 }
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
   align-items: center;
 }
 

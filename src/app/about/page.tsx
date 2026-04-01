@@ -4,7 +4,7 @@ import styles from './About.module.css';
 
 const AboutPage = () => {
   return (
-    <div className={styles.aboutWrapper}>
+    <div className={`storefront-main ${styles.aboutWrapper}`}>
       <header className={styles.header}>
         <div className="container">
           <h1>Our Story</h1>
