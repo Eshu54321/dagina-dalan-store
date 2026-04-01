@@ -84,12 +84,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <div className={styles.priceContainer}>
           {product.discountPrice ? (
             <>
-              <span className={styles.discountPrice}>₹ {new Intl.NumberFormat('en-IN').format(product.discountPrice)}</span>
+              <span className={styles.currentPrice}>₹ {new Intl.NumberFormat('en-IN').format(product.discountPrice)}</span>
               <span className={styles.originalPrice}>₹ {new Intl.NumberFormat('en-IN').format(product.price)}</span>
               <span className={styles.discountPercent}>({discount}%)</span>
             </>
           ) : (
-            <span className={styles.price}>₹ {new Intl.NumberFormat('en-IN').format(product.price)}</span>
+            <span className={styles.currentPrice}>₹ {new Intl.NumberFormat('en-IN').format(product.price)}</span>
           )}
         </div>
       </div>

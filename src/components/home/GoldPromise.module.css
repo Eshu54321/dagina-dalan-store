@@ -80,8 +80,8 @@
   }
   
   .imageCol {
-    height: 450px;
-    max-width: 500px;
+    height: 350px;
+    width: 100%;
     margin: 0 auto;
   }
   
@@ -91,6 +91,12 @@
   
   .promiseList {
     text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .promiseSection {
+    padding: 60px 0;
   }
 }
 

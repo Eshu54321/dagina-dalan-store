@@ -19,7 +19,8 @@ const mockProducts = [
     _id: '2',
     name: 'Gold Plated Jhumkas',
     slug: 'gold-plated-jhumkas',
-    price: 1200,
+    price: 1600,
+    discountPrice: 1200,
     images: ['https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=800&auto=format&fit=crop'],
     category: 'Earrings'
   },
@@ -36,7 +37,8 @@ const mockProducts = [
     _id: '4',
     name: 'Pearl Bridal Bangle',
     slug: 'pearl-bridal-bangle',
-    price: 3200,
+    price: 3800,
+    discountPrice: 3200,
     images: ['https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop'],
     category: 'Bangles'
   }

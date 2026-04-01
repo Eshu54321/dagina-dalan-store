@@ -10,10 +10,10 @@ const ShopPage = () => {
   // Mock products for the shop
   const allProducts = [
     { _id: '1', name: 'The Empress Medallion Necklace', slug: 'the-empress-medallion-necklace', price: 4500, discountPrice: 3800, images: ['https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=800&auto=format&fit=crop'], category: 'Necklaces' },
-    { _id: '2', name: 'Gold Plated Jhumkas', slug: 'gold-plated-jhumkas', price: 1200, images: ['https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=800&auto=format&fit=crop'], category: 'Earrings' },
+    { _id: '2', name: 'Gold Plated Jhumkas', slug: 'gold-plated-jhumkas', price: 1600, discountPrice: 1200, images: ['https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=800&auto=format&fit=crop'], category: 'Earrings' },
     { _id: '3', name: 'Floral Diamond Ring', slug: 'floral-diamond-ring', price: 2500, discountPrice: 2100, images: ['https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800&auto=format&fit=crop'], category: 'Rings' },
-    { _id: '4', name: 'Pearl Bridal Bangle', slug: 'pearl-bridal-bangle', price: 3200, images: ['https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop'], category: 'Bangles' },
-    { _id: '5', name: 'Ruby Pendant Set', slug: 'ruby-pendant-set', price: 2800, images: ['https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop'], category: 'Necklaces' },
+    { _id: '4', name: 'Pearl Bridal Bangle', slug: 'pearl-bridal-bangle', price: 3800, discountPrice: 3200, images: ['https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop'], category: 'Bangles' },
+    { _id: '5', name: 'Ruby Pendant Set', slug: 'ruby-pendant-set', price: 3400, discountPrice: 2800, images: ['https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop'], category: 'Necklaces' },
     { _id: '6', name: 'Royal Maharani Set', slug: 'royal-maharani-set', price: 8500, discountPrice: 7200, images: ['https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=800&auto=format&fit=crop'], category: 'Necklaces' }
   ];
 
