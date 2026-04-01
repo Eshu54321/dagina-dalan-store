@@ -10,22 +10,22 @@ const sliderSlides = [
   {
     desktop: '/hero-1-desktop.png',
     mobile: '/hero-1-mobile.png',
-    title: '9KT Gold Mangalsutras',
-    subTitle: 'Tradition, reimagined with ',
+    title: '1 Gram Gold Mangalsutras',
+    subTitle: 'Premium 1 gram gold heritage reimagined with ',
     author: 'Amrita Rao'
   },
   {
     desktop: '/hero-2-desktop.png',
     mobile: '/hero-2-mobile.png',
     title: 'Heritage Bridal Sets',
-    subTitle: 'Royal elegance for your ',
+    subTitle: 'Exquisite imitation bridal sets for your ',
     author: 'Special Day'
   },
   {
     desktop: '/hero-3-desktop.png',
     mobile: '/hero-3-mobile.png',
     title: 'Minimalist Essentials',
-    subTitle: 'Discover luxury for ',
+    subTitle: 'Premium 1 gram gold daily wear for ',
     author: 'Everyday'
   }
 ];

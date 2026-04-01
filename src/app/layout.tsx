@@ -12,12 +12,12 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL('http://localhost:3000'),
-  title: "Dagina Dalan | Premium Artificial Jewellery Store",
-  description: "Discover our elegant collection of handcrafted artificial jewellery. From Kundan necklaces to bridal sets, find the perfect piece for every occasion.",
-  keywords: "jewellery, artificial jewellery, kundan, bridal sets, luxury accessories",
+  title: "Dagina Dalan | Premium Imitation & 1 Gram Gold Jewellery Store",
+  description: "Experience the allure of Premium Imitation and 1 Gram Gold Jewellery. Handcrafted elegance for every celebration, from bridal sets to daily essentials.",
+  keywords: "imitation jewellery, 1 gram gold, premium fashion jewellery, bridal imitation, luxury gold plated-accessories, kundan, wedding jewellery",
   openGraph: {
-    title: "Dagina Dalan | Premium Artificial Jewellery Store",
-    description: "Elegant handcrafted jewellery for every occasion.",
+    title: "Dagina Dalan | Premium Imitation & 1 Gram Gold Jewellery Store",
+    description: "Elegant handcrafted imitation and 1 gram gold jewellery for every heritage.",
     images: ["/og-image.jpg"],
   },
 };

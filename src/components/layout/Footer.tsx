@@ -19,7 +19,7 @@ const Footer = () => {
       >
         <div className={styles.brandCol} suppressHydrationWarning>
           <h3>DAGINA <span>DALAN</span></h3>
-          <p>Exquisite artificial jewellery for your special moments. Crafted with passion, worn with elegance.</p>
+          <p>Exquisite imitation and 1 gram gold jewellery for your special moments. Crafted with passion, worn with elegance.</p>
           <div className={styles.socials} suppressHydrationWarning>
             <Link href="#"><Facebook size={20} /></Link>
             <Link href="#"><Instagram size={20} /></Link>

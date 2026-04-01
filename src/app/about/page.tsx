@@ -15,12 +15,12 @@ const AboutPage = () => {
       <section className={`container ${styles.section}`}>
         <div className={styles.content}>
           <div className={styles.text}>
-            <h2>Crafting Elegance Since 2010</h2>
+            <h2>The Legacy of 1 Gram Gold</h2>
             <p>
-              Dagina Dalan was born out of a passion for exquisite design and the belief that luxury should be accessible to everyone. We specialize in high-quality artificial jewellery that captures the essence of traditional craftsmanship with a modern aesthetic.
+              Dagina Dalan was born out of a passion for exquisite design and the belief that luxury should be accessible to everyone. We specialize in **Premium Imitation and 1 Gram Gold Jewellery** that captures the essence of traditional craftsmanship with a modern aesthetic.
             </p>
             <p>
-              Each piece in our collection is meticulously handcrafted by skilled artisans who use only the finest materials, from gold-plated brass to semi-precious stones and fresh-water pearls.
+              Each piece in our collection is meticulously handcrafted by skilled artisans who use advanced 1 gram gold plating technology, ensuring a finish that is indistinguishable from solid gold while offering superior durability and radiance.
             </p>
           </div>
           <div className={styles.imageBox}>
@@ -39,16 +39,16 @@ const AboutPage = () => {
         <div className="container">
           <div className={styles.valueGrid}>
             <div className={styles.valueCard} style={{ background: 'white' }}>
-              <h3>Unrivaled Quality</h3>
-              <p>We use premium plating and high-grade stones to ensure your jewellery stays radiant for years.</p>
+              <h3>1 Gram Gold Finish</h3>
+              <p>We use premium 1 gram gold plating and high-grade stones to ensure your jewellery stays radiant for years.</p>
             </div>
             <div className={styles.valueCard} style={{ background: 'white' }}>
-              <h3>Artisan Made</h3>
-              <p>Supporting local craftsmanship by employing skilled artisans for every intricate design.</p>
+              <h3>Handcrafted Imitation</h3>
+              <p>Supporting local craftsmanship by employing skilled artisans for every intricate imitation design.</p>
             </div>
             <div className={styles.valueCard} style={{ background: 'white' }}>
-              <h3>Ethical Sourcing</h3>
-              <p>All our materials are ethically sourced and nickel-free for skin comfort.</p>
+              <h3>Skin-Safe Luxury</h3>
+              <p>All our materials are nickel-free and anti-tarnish for high-end comfort and longevity.</p>
             </div>
           </div>
         </div>

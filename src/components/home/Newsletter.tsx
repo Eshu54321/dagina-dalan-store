@@ -24,7 +24,7 @@ const Newsletter = () => {
       >
         <div className={styles.content}>
           <h2>Join Our <span className="text-gold">Inner Circle</span></h2>
-          <p>Get exclusive early access to new collections, special offers, and jewellery styling tips.</p>
+          <p>Get exclusive early access to new 1 Gram Gold and Imitation collections, special offers, and jewellery styling tips.</p>
         </div>
         
         <form className={styles.form} onSubmit={handleSubmit}>
