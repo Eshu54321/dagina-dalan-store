@@ -4,11 +4,11 @@ import React from 'react';
 import styles from './InfoTicker.module.css';
 
 const tickerItems = [
-  "✔ Premium Finish Jewellery",
+  "✔ Premium 1 Gram Gold Plating",
   "✔ Skin-Friendly Material",
   "✔ Anti-Tarnish Coating",
   "✔ Lightweight & Comfortable",
-  "✔ Trusted Quality Guarantee",
+  "✔ 100% Quality Assurance",
 ];
 
 const InfoTicker = () => {
